@@ -13,12 +13,17 @@ import Content4 from "./Content4";
 import InputSample from "./InputSample";
 import InputSample2 from "./InputSample2";
 import Content5 from "./Content5";
+import InputSample3 from "./InputSample3";
+import Life from "./Life";
+import Counter2 from "./Counter2";
+import Style from "./Style";
+import Main from "./Main";
 
 // import Content from "./Content";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <>
     {/* <Content /> */}
     {/* <App /> */}
     {/* <App2 /> */}
@@ -28,8 +33,13 @@ root.render(
     {/* <Content4 /> */}
     {/* <InputSample /> */}
     {/* <InputSample2 /> */}
-    <Content5 />
-  </React.StrictMode>
+    {/* <Content5 /> */}
+    {/* <InputSample3 /> */}
+    {/* <Life /> */}
+    {/* <Counter2 /> */}
+    {/* <Style /> */}
+    <Main />
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function

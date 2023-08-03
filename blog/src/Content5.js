@@ -61,7 +61,7 @@ function Content5() {
     // likes 배열에 들어 있는 값을 개별요소로 꺼내서 새로운 배열 생성 - 원본과 달라야함
     const newLikes = [...likes];
 
-    articles.map((article, idx) => {
+    articleList.map((article, idx) => {
       if (idx === Number(e.target.id)) {
         newLikes[idx] += 1;
       }
@@ -100,6 +100,25 @@ function Content5() {
               {likes[idx]}
             </h3>
             <p>{article.regdate}</p>
+            <div>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  // 필터링해주는거 같지 않으면 남겨주는것 같은것은 삭제
+                  setArticle(articleList.filter((item, index) => idx != index));
+
+                  // articleList 에서 삭제버튼 누른 글 제거
+                  // 배열 항목 제거 : 배열명.splice(idx, 1)
+
+                  // let copy = [...articleList];
+                  // copy.splice(0, 1); // idx 가 0번인 글 (1개)삭제
+                  // setArticle(copy);
+                }}
+              >
+                삭제
+              </button>
+            </div>
           </div>
         );
       })}
@@ -112,7 +131,7 @@ function Content5() {
       </div>
 
       {/* modal 값이 true 인 경우만 Modal 컴포넌트 보여주기 : if~else 사용불가 => 삼항연산자 사용 */}
-      {modal ? <Modal choice={articles[target]} /> : null}
+      {modal ? <Modal choice={articleList[target]} /> : null}
     </div>
   );
 }
