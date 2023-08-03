@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>0</h1>
+      <button type="button" class="increase">+</button>
+      <button type="button" class="decrease">-</button>
+    </div>
+    <script src="index.js"></script>
+    <script>
+      // + 버튼이 눌러지면 현재값 + 1
+      // - 버튼이 눌러지면 현재값 - 1
+      let counter = 0;
+      function incDec(e) {
+        if (e.target.classList.contains("increase")) {
+          counter += 1;
+        } else {
+          counter -= 1;
+        }
+        document.querySelector("h1").innerHTML = counter;
+      }
+      document.querySelector(".increase").addEventListener("click", incDec);
+      document.querySelector(".decrease").addEventListener("click", incDec);
+    </script>
+  </body>
+</html>
